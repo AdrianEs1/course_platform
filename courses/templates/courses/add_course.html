@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Curso</title>
+</head>
+<body>
+    {% block title %}Agregar Curso{% endblock %}
+
+    {% block content %}
+    <h2>Agregar Nuevo Curso</h2>
+    <form method="POST" action="{% url 'add_course' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.title.label_tag }}  
+            {{ form.title }}
+        </div>
+        <div class="mb-3">
+            {{ form.description.label_tag }}  
+            {{ form.description }}
+        </div>
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <a href="{% url 'course_list' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+    {% endblock %}
+    
+</body>
+</html>
