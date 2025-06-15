@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block module %}Eliminar módulo{% endblock %}
+
+{% block content %}
+<h2>¿Estás seguro de que deseas eliminar el módulo "{{ module.title }}"?</h2>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+    <a href="{% url 'course_detail' module.course.id%}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}

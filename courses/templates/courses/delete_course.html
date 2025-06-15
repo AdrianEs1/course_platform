@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'baseindex.html' %}
 
 {% block title %}Eliminar Curso{% endblock %}
 
@@ -7,6 +7,11 @@
 <form method="POST">
     {% csrf_token %}
     <button type="submit" class="btn btn-danger">Sí, eliminar</button>
-    <a href="{% url 'course_list' %}" class="btn btn-secondary">Cancelar</a>
+    {% if user.is_authenticated and user.is_teacher %}
+        <a href="{% url 'courseteacher' %}" class="btn btn-secondary">Cancelar</a>
+    {% endif %}
+    {% if user.is_authenticated and user.is_student %}
+        <a href="{% url 'coursestudent' %}" class="btn btn-secondary">Cancelar</a>
+    {% endif %}
 </form>
 {% endblock %}

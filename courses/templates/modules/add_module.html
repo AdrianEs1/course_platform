@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h2>Agregar módulo al curso: {{ course.title }}</h2>
+    <form method="post" action="{% url 'add_module' course.id %}">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Guardar módulo</button>
+    </form>
+  </div>
+{% endblock %}

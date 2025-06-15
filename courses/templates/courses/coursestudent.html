@@ -1,0 +1,47 @@
+{% extends 'baseindex.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos Disponibles</title>
+</head>
+<body>
+    {% block title %}Listado de Cursos{% endblock %}
+
+    {% block content %}
+    <h2>Listado de Cursos</h2>
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Modulos</th>
+                <th>Modificar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for curso in cursos %}
+            <tr>
+                <td>{{ curso.course.title }}</td>
+                <td>{{ curso.course.description }}</td>
+                <td>{% for modulo in curso.course.modules.all %}
+                        <li>{{ modulo.title }} - {{ modulo.description }}</li>
+                    {% endfor %}</td>
+                <td>
+                    <a href="{% url 'delete_course' curso.course.id %}" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="2">No hay cursos disponibles.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'course_list' %}" class="btn btn-primary">Agregar Curso</a>
+    {% endblock %}
+</body>
+</html>

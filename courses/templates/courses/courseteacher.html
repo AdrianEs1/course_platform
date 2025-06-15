@@ -21,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for course in courses %}
+            {% for course in cursos %}
             <tr>
                 <td>{{ course.title }}</td>
                 <td>{{ course.description }}</td>
@@ -33,14 +33,6 @@
                         <a href="{% url 'delete_course' course.id %}" class="btn btn-sm btn-danger">Eliminar</a>
                     {% endif %}
 
-                    {% if user.is_authenticated and user.is_student %}
-
-                        <form action="{% url 'agregarcourse' course.id %}" method="POST">
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-success">Agregar</button>
-                        </form>
-                    {% endif %}
-                    
                 </td>
 
             </tr>
@@ -51,11 +43,9 @@
             {% endfor %}
         </tbody>
     </table>
-    {% if user.is_authenticated and user.is_student %}
-        <a href="{% url 'coursestudent' %}" class="btn btn-primary">Regresar</a>               
-    {% endif %}
     {% if user.is_authenticated and user.is_teacher %}
-        <a href="{% url 'courseteacher' %}" class="btn btn-primary">Regresar</a>               
+        <a href="{% url 'index' %}" class="btn btn-primary">Regresar</a>
+        <a href="{% url 'add_course'%}" class="btn btn-primary">Agregar Curso</a>              
     {% endif %}
 
     {% endblock %}
