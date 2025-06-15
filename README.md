@@ -31,38 +31,36 @@ Este es un proyecto desarrollado con Django como parte de mi portafolio personal
     HTML5 + BootSatrap
 
 
-📂 Estructura del proyecto
-´´´
 course_platform/
-|
+│
 ├── course_platform/             
 │   ├── __init__.py       
 │   ├── asgi.py          
-│   ├── settings.py/  
-│   ├── urls.py/  
-│   ├── wsgi.py/        
+│   ├── settings.py  
+│   ├── urls.py  
+│   ├── wsgi.py        
 │
 ├── courses/              # Aplicación principal
 │   ├── migrations/ 
-│   |   ├── __init__.py 
-│   |   ├── 0001_initial.py 
+│   │   ├── __init__.py 
+│   │   ├── 0001_initial.py 
 │   ├── templates/        # Templates HTML personalizados
-│   |   ├── courses/ 
-|   │   |   ├── add_course.html 
-|   │   |   ├── course_detail.html 
-|   │   |   ├── course_list.html 
-|   │   |   ├── coursestudent.html
-|   │   |   ├── courseteacher.html
-|   │   |   ├── delete-course.html
-|   │   |   ├── edit_course.html
-|   │   |   ├── login.html
-|   │   |   ├── register.html
-│   |   ├── modules/ 
-|   │   |   ├── add_module.html
-|   │   |   ├── delete_module.html
-|   │   |   ├── edit_module.html
-│   |   ├── baseindex.html.py 
-│   |   ├── index.py 
+│   │   ├── courses/ 
+│   │   │   ├── add_course.html 
+│   │   │   ├── course_detail.html 
+│   │   │   ├── course_list.html 
+│   │   │   ├── coursestudent.html
+│   │   │   ├── courseteacher.html
+│   │   │   ├── delete-course.html
+│   │   │   ├── edit_course.html
+│   │   │   ├── login.html
+│   │   │   ├── register.html
+│   │   ├── modules/ 
+│   │   │   ├── add_module.html
+│   │   │   ├── delete_module.html
+│   │   │   ├── edit_module.html
+│   │   ├── baseindex.html.py 
+│   │   ├── index.py 
 │   ├── __init__.py
 │   ├── admin.py
 │   ├── apps.py
@@ -76,7 +74,7 @@ course_platform/
 ├── db.sqlite3
 ├── manage.py
 └── README.md             # Este archivo
-´´´
+
 🔑 Roles
 
     Profesor: crea y edita cursos.
