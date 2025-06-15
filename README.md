@@ -31,6 +31,9 @@ Este es un proyecto desarrollado con Django como parte de mi portafolio personal
     HTML5 + BootSatrap
 
 
+### 📁 Estructura del proyecto
+
+```
 course_platform/
 │
 ├── course_platform/             
@@ -74,6 +77,8 @@ course_platform/
 ├── db.sqlite3
 ├── manage.py
 └── README.md             # Este archivo
+```
+
 
 🔑 Roles
 
